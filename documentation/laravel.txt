@@ -17,3 +17,12 @@ npm run dev / build
 php artisan migrate
 
 *****************************************************************
+php artisan migrate:fresh --seed
+
+php artisan migrate:fresh
+
+php artisan make:model Region -mfsc
+php artisan make:model Provincia -mfsc
+php artisan make:model Distrito -mfsc
+
+php artisan make:model Sede -mfsc
