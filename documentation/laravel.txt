@@ -1,0 +1,19 @@
+*****************************************************************
+
+composer create-project laravel/laravel walpachicken
+
+php artisan serve
+
+composer require laravel/jetstream
+php artisan jetstream:install livewire
+yes
+
+npm install
+npm run dev / build
+
+->Configurar el .env con la base de datos mysql = walpachicken
+->Crear la base de datos en phpmyadmin.
+
+php artisan migrate
+
+*****************************************************************
