@@ -23,7 +23,9 @@
                                                             <ul class="sede-list" style="display: none;">
                                                                 @foreach ($distrito['sedes'] as $sede)
                                                                     @if (isset($sede['nombre']))
-                                                                        <li>{{ $sede['nombre'] }}</li>
+                                                                        <li>
+                                                                            <a href="{{ $sede['sede_id'] }}">{{ $sede['nombre'] }}</a>
+                                                                        </li>
                                                                     @endif
                                                                 @endforeach
                                                             </ul>
@@ -50,25 +52,43 @@
 
             // Mostrar/Ocultar el dropdown de provincias al hacer clic en la región
             document.querySelectorAll('.region-nombre').forEach(region => {
-                region.addEventListener('click', function() {
+                region.addEventListener('click', function(event) {
+                    event.stopPropagation(); // Evitar que el evento se propague
                     const provinciaDropdown = this.nextElementSibling;
-                    provinciaDropdown.style.display = provinciaDropdown.style.display === 'none' ? 'block' : 'none'; // Alternar visibilidad
+                    // Alternar visibilidad
+                    provinciaDropdown.style.display = provinciaDropdown.style.display === 'none' ? 'block' : 'none';
+                    // Ocultar otros dropdowns
+                    document.querySelectorAll('.provincia-dropdown').forEach(p => {
+                        if (p !== provinciaDropdown) p.style.display = 'none';
+                    });
                 });
             });
 
             // Mostrar/Ocultar el dropdown de distritos al hacer clic en la provincia
             document.querySelectorAll('.provincia-nombre').forEach(provincia => {
-                provincia.addEventListener('click', function() {
+                provincia.addEventListener('click', function(event) {
+                    event.stopPropagation(); // Evitar que el evento se propague
                     const distritoDropdown = this.nextElementSibling;
-                    distritoDropdown.style.display = distritoDropdown.style.display === 'none' ? 'block' : 'none'; // Alternar visibilidad
+                    // Alternar visibilidad
+                    distritoDropdown.style.display = distritoDropdown.style.display === 'none' ? 'block' : 'none';
+                    // Ocultar otros dropdowns de distritos
+                    document.querySelectorAll('.distrito-dropdown').forEach(d => {
+                        if (d !== distritoDropdown) d.style.display = 'none';
+                    });
                 });
             });
 
             // Mostrar/Ocultar las sedes al hacer clic en el distrito
             document.querySelectorAll('.distrito-nombre').forEach(distrito => {
-                distrito.addEventListener('click', function() {
+                distrito.addEventListener('click', function(event) {
+                    event.stopPropagation(); // Evitar que el evento se propague
                     const sedeList = this.nextElementSibling;
-                    sedeList.style.display = sedeList.style.display === 'none' ? 'block' : 'none'; // Alternar visibilidad
+                    // Alternar visibilidad
+                    sedeList.style.display = sedeList.style.display === 'none' ? 'block' : 'none';
+                    // Ocultar otras listas de sedes
+                    document.querySelectorAll('.sede-list').forEach(s => {
+                        if (s !== sedeList) s.style.display = 'none';
+                    });
                 });
             });
         </script>
@@ -105,6 +125,7 @@
 
             .distrito {
                 margin-left: 20px;
+                cursor: pointer;
             }
 
             .sede-list {

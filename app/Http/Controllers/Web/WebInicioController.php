@@ -12,7 +12,7 @@ class WebInicioController extends Controller
     {
         $data = $this->getWebSedesPorRegionProvinciaDistrito();
 
-       // dd($data);
+        // dd($data);
 
         return view('web.inicio.index', ['data' => $data]);
     }
@@ -37,15 +37,19 @@ class WebInicioController extends Controller
         $estructuraAnidada = $regiones->map(function ($region) {
             return [
                 'region' => [
+                    'region_id' => $region->id,
                     'nombre' => $region->nombre,
                     'provincia' => $region->provincias->map(function ($provincia) {
                         return [
+                            'provincia_id' => $provincia->id,
                             'nombre' => $provincia->nombre,
                             'distrito' => $provincia->distritos->map(function ($distrito) {
                                 return [
+                                    'distrito_id' => $distrito->id,
                                     'nombre' => $distrito->nombre,
                                     'sedes' => $distrito->sedes->map(function ($sede) {
                                         return [
+                                            'sede_id' => $sede->id,
                                             'nombre' => $sede->nombre
                                         ];
                                     })
