@@ -20,7 +20,7 @@
             </div>           
 
             <!-- MENU -->
-            <div class="contenedor_menu" x-transition>
+            <div class="contenedor_menu" :class="{ 'contenedor_menu_abierto': menuAbierto }" x-transition>
                 <!-- CERRAR -->
                 <span class="icono_cerrar" @click="menuAbierto = false">
                     x
@@ -88,8 +88,6 @@
                         </div>
                     </div>
                 </div>
-
-
             </div>
         </div>
 
