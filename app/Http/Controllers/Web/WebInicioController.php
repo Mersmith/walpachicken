@@ -10,11 +10,173 @@ class WebInicioController extends Controller
 {
     public function __invoke()
     {
-        $data = $this->getWebSedesPorRegionProvinciaDistrito();
+
+        $menu = [
+            [
+                'id' => 1,
+                'title' => 'Nuestra Carta',
+                'submenu' => [
+                    [
+                        'id' => 2,
+                        'title' => 'Región 1',
+                        'submenu' => [
+                            [
+                                'id' => 3,
+                                'title' => 'Provincia 1',
+                                'submenu' => [
+                                    [
+                                        'id' => 4,
+                                        'title' => 'Distrito 1',
+                                        'submenu' => [
+                                            ['id' => 5, 'title' => 'Sedes 1']
+                                        ]
+                                    ],
+                                    [
+                                        'id' => 6,
+                                        'title' => 'Distrito 2',
+                                        'submenu' => [
+                                            ['id' => 7, 'title' => 'Sedes 1'],
+                                            ['id' => 8, 'title' => 'Sedes 2'],
+                                            ['id' => 9, 'title' => 'Sedes 3']
+                                        ]
+                                    ]
+                                ]
+                            ],
+                            [
+                                'id' => 10,
+                                'title' => 'Provincia 2',
+                                'submenu' => [
+                                    [
+                                        'id' => 11,
+                                        'title' => 'Distrito 1',
+                                        'submenu' => [
+                                            ['id' => 12, 'title' => 'Sedes 1']
+                                        ]
+                                    ],
+                                    [
+                                        'id' => 13,
+                                        'title' => 'Distrito 2',
+                                        'submenu' => [
+                                            ['id' => 14, 'title' => 'Sedes 1'],
+                                            ['id' => 15, 'title' => 'Sedes 2'],
+                                            ['id' => 16, 'title' => 'Sedes 3']
+                                        ]
+                                    ]
+                                ]
+                            ]
+                        ]
+                    ],
+                    [
+                        'id' => 17,
+                        'title' => 'Región 2',
+                        'submenu' => [
+                            [
+                                'id' => 18,
+                                'title' => 'Provincia 2',
+                                'submenu' => [
+                                    [
+                                        'id' => 19,
+                                        'title' => 'Distrito 2',
+                                        'submenu' => [
+                                            ['id' => 20, 'title' => 'Sedes 1'],
+                                            ['id' => 21, 'title' => 'Sedes 2']
+                                        ]
+                                    ]
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+            ],
+            [
+                'id' => 22,
+                'title' => 'Promociones',
+                'submenu' => [
+                    [
+                        'id' => 23,
+                        'title' => 'Región 1',
+                        'submenu' => [
+                            [
+                                'id' => 24,
+                                'title' => 'Provincia 1',
+                                'submenu' => [
+                                    [
+                                        'id' => 25,
+                                        'title' => 'Distrito 1',
+                                        'submenu' => [
+                                            ['id' => 26, 'title' => 'Sedes 1']
+                                        ]
+                                    ],
+                                    [
+                                        'id' => 27,
+                                        'title' => 'Distrito 2',
+                                        'submenu' => [
+                                            ['id' => 28, 'title' => 'Sedes 1'],
+                                            ['id' => 29, 'title' => 'Sedes 2'],
+                                            ['id' => 30, 'title' => 'Sedes 3']
+                                        ]
+                                    ]
+                                ]
+                            ],
+                            [
+                                'id' => 31,
+                                'title' => 'Provincia 2',
+                                'submenu' => [
+                                    [
+                                        'id' => 32,
+                                        'title' => 'Distrito 1',
+                                        'submenu' => [
+                                            ['id' => 33, 'title' => 'Sedes 1']
+                                        ]
+                                    ],
+                                    [
+                                        'id' => 34,
+                                        'title' => 'Distrito 2',
+                                        'submenu' => [
+                                            ['id' => 35, 'title' => 'Sedes 1'],
+                                            ['id' => 36, 'title' => 'Sedes 2'],
+                                            ['id' => 37, 'title' => 'Sedes 3']
+                                        ]
+                                    ]
+                                ]
+                            ]
+                        ]
+                    ],
+                    [
+                        'id' => 38,
+                        'title' => 'Región 2',
+                        'submenu' => [
+                            [
+                                'id' => 39,
+                                'title' => 'Provincia 2',
+                                'submenu' => [
+                                    [
+                                        'id' => 40,
+                                        'title' => 'Distrito 2',
+                                        'submenu' => [
+                                            ['id' => 41, 'title' => 'Sedes 1'],
+                                            ['id' => 42, 'title' => 'Sedes 2']
+                                        ]
+                                    ]
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+            ],
+            [
+                'id' => 43,
+                'title' => 'Catering',
+                'submenu' => []
+            ]
+        ];
+
+
+        //$data = $this->getWebSedesPorRegionProvinciaDistrito();
 
         // dd($data);
 
-        return view('web.inicio.index', ['data' => $data]);
+        return view('web.inicio.index', ['menu' => $menu]);
     }
 
     public function getWebSedesPorRegionProvinciaDistrito()

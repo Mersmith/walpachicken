@@ -16,6 +16,7 @@
 
     <!-- STYLES -->
     @livewireStyles
+    @include('layouts.web.assets.css')
 </head>
 
 <body>
@@ -30,11 +31,10 @@
         @endif
     </main>
 
-    @include('layouts.web.footer.footer', [
-        'p_elementos' => $footer,
-    ])
+    @include('layouts.web.footer.footer')
 
     <!--SCRIPTS-->
+    @include('layouts.web.assets.js')
     @stack('modals')
     @livewireScripts
     @stack('script')
