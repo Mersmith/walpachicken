@@ -20,3 +20,9 @@
     margin: 0 auto;
     width: 100%;
 }
+
+.g_centrar_pagina {
+    margin: 0 auto;
+    max-width: 1280px;
+    width: 100%;
+}
