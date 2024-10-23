@@ -13,24 +13,38 @@ class WebInicioController extends Controller
         $menu_izquierda = [
             [
                 'id' => 1,
-                'nombre' => 'Nuestra Carta',
+                'nombre' => 'NUESTRA CARTA',
                 'submenu' => []
             ],
             [
                 'id' => 22,
-                'nombre' => 'Promociones',
+                'nombre' => 'PROMOCIONES',
                 'submenu' => []
             ],
             [
                 'id' => 43,
-                'nombre' => 'Catering',
+                'nombre' => 'CATERING',
+                'submenu' => []
+            ]
+        ];
+
+        $menu_derecha = [
+            [
+                'id' => 1,
+                'nombre' => 'MI UBICACIÓN',
                 'submenu' => []
             ]
         ];
 
         $menu_izquierda_sede = $this->agregarSedesAMenu($menu_izquierda);
+        $menu_derecha_sede = $this->agregarSedesAMenuUbicacion($menu_derecha);
 
-        return view('web.inicio.index', ['menu_izquierda_sede' => $menu_izquierda_sede]);
+        //dd($menu_derecha_sede);
+
+        return view('web.inicio.index', [
+            'menu_izquierda_sede' => $menu_izquierda_sede,
+            'menu_derecha_sede' => $menu_derecha_sede
+        ]);
     }
 
     public function getWebSedesPorRegionProvinciaDistrito()
@@ -123,6 +137,17 @@ class WebInicioController extends Controller
         foreach ($sedes as $item) {
             $menu[0]['submenu'][] = $item['submenu']; // 1er nivel
             $menu[1]['submenu'][] = $item['submenu']; // 2do nivel
+        }
+
+        return $menu;
+    }
+
+    public function agregarSedesAMenuUbicacion($menu)
+    {
+        $sedes = $this->getWebSedesPorRegionProvinciaDistrito();
+
+        foreach ($sedes as $item) {
+            $menu[0]['submenu'][] = $item['submenu']; // 1er nivel
         }
 
         return $menu;

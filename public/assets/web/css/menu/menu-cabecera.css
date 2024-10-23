@@ -8,15 +8,32 @@
     z-index: 1000;
     display: grid;
     grid-template-areas: "logo contenedor_menu";
-    grid-template-columns: 100px auto;
+    grid-template-columns: 120px auto;
+    grid-gap: 10px;
     align-items: center;
     padding: 0px 20px;
     height: 120px;
+    font-size: 14px;
+}
+
+.icono_hamburguesa {
+    display: none;
+}
+
+.icono_cerrar {
+    display: none;
+}
+
+.icono {
+    font-size: 20px;
+    cursor: pointer;
 }
 
 .logo {
     grid-area: logo;
     display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .logo img {
@@ -31,6 +48,8 @@
 .contenedor_menu {
     grid-area: contenedor_menu;
     display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 /* MENU */
@@ -39,6 +58,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 10px;
 }
 
 .menu ul {
@@ -55,7 +75,7 @@
 .menu ul li a {
     display: block;
     text-align: center;
-    padding: 14px 20px;
+    padding: 10px 20px;
     text-decoration: none;
 }
 
@@ -83,23 +103,31 @@
     top: 0;
 }
 
-.icono_hamburguesa {
-    display: none;
+.menu_izquierda {
+    display: flex;
 }
-
-.icono_cerrar {
-    display: none;
-}
-
 
 .menu_derecha {
     display: flex;
 }
 
+.botones {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.boton {
+    background-color: red;
+    border-radius: 8px;
+    font-weight: 700;
+    padding: 5px 10px;
+    font-size: 13px;
+}
+
 .content {
     padding-top: 120px;
 }
-
 
 @media (max-width: 1000px) {
 
@@ -108,7 +136,9 @@
     }
 
     .icono_cerrar {
-        display: block;
+        display: flex;
+        width: 100%;
+        justify-content: flex-end;
     }
 
     .navbar {
@@ -127,6 +157,7 @@
         left: 0;
         z-index: 999;
         flex-direction: column;
+        padding: 20px;
     }
 
     .contenedor_menu.contenedor_menu_abierto {
@@ -161,10 +192,15 @@
         min-width: 100%;
     }
 
-    .menu_derecha{
+    .menu_derecha {
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+
+    .botones {
+        flex-direction: column;
+        gap: 20px;
     }
 
 }

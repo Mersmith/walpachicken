@@ -8,8 +8,8 @@
             <!-- LOGO -->
             <div class="logo">
                 <!-- HAMBURGUESA -->
-                <span class="icono_hamburguesa" @click="menuAbierto = true">
-                    <p>H</p>
+                <span class="icono_hamburguesa icono" @click="menuAbierto = true">
+                    <i class="fa-solid fa-bars"></i>
                 </span>
 
                 <!-- IMAGEN -->
@@ -22,8 +22,8 @@
             <!-- MENU -->
             <div class="contenedor_menu" :class="{ 'contenedor_menu_abierto': menuAbierto }" x-transition>
                 <!-- CERRAR -->
-                <span class="icono_cerrar" @click="menuAbierto = false">
-                    x
+                <span class="icono_cerrar icono" @click="menuAbierto = false">
+                    <i class="fa-solid fa-xmark"></i>
                 </span>
 
                 <!-- MENU -->
@@ -32,7 +32,11 @@
                         <ul class="menu_nivel_1">
                             @foreach ($menu_izquierda_sede as $nivel1)
                                 <li>
-                                    <a href="#">{{ $nivel1['nombre'] }}</a>
+                                    <a href="#">{{ $nivel1['nombre'] }} 
+                                    @if (!empty($nivel1['submenu']))
+                                        <span><i class="fa-solid fa-angle-down"></i></span> 
+                                    @endif
+                                </a>
                                     @if (!empty($nivel1['submenu']))
                                         <ul class="menu_nivel_2 submenu">
                                             @foreach ($nivel1['submenu'] as $nivel2)
@@ -75,17 +79,59 @@
                     </div>
 
                     <div class="menu_derecha">
-                        <div>
-                            <p>ELIGE TU EXPERIENCIA:</p>
+                        <div class="botones">
+                            <span>ELIGE TU EXPERIENCIA:</span>
+                            <a href="" class="boton">¡RESERVA ONLINE!</a>
+                            <a href="" class="boton">OPORTUNIDADES</a>
                         </div>
 
-                        <div>
-                            <p>¡RESERVA ONLINE!</p>
-                        </div>
-
-                        <div>
-                            <p>MI UBICACIÓN</p>
-                        </div>
+                        <ul class="menu_nivel_1">
+                            @foreach ($menu_derecha_sede as $nivel1)
+                                <li>
+                                    <a href="#">{{ $nivel1['nombre'] }} 
+                                    @if (!empty($nivel1['submenu']))
+                                        <span><i class="fa-solid fa-angle-down"></i></span> 
+                                    @endif
+                                </a>
+                                    @if (!empty($nivel1['submenu']))
+                                        <ul class="menu_nivel_2 submenu">
+                                            @foreach ($nivel1['submenu'] as $nivel2)
+                                                <li>
+                                                    <a href="#">{{ $nivel2['nombre'] }}</a>
+                                                    @if (!empty($nivel2['submenu']))
+                                                        <ul class="menu_nivel_3 submenu">
+                                                            @foreach ($nivel2['submenu'] as $nivel3)
+                                                                <li>
+                                                                    <a href="#">{{ $nivel3['nombre'] }}</a>
+                                                                    @if (!empty($nivel3['submenu']))
+                                                                        <ul class="menu_nivel_4 submenu">
+                                                                            @foreach ($nivel3['submenu'] as $nivel4)
+                                                                                <li>
+                                                                                    <a href="#">{{ $nivel4['nombre'] }}</a>
+                                                                                    @if (!empty($nivel4['submenu']))
+                                                                                        <ul class="menu_nivel_5 submenu">
+                                                                                            @foreach ($nivel4['submenu'] as $nivel5)
+                                                                                                <li>
+                                                                                                    <a href="#">{{ $nivel5['nombre'] }}</a>
+                                                                                                </li>
+                                                                                            @endforeach
+                                                                                        </ul>
+                                                                                    @endif
+                                                                                </li>
+                                                                            @endforeach
+                                                                        </ul>
+                                                                    @endif
+                                                                </li>
+                                                            @endforeach
+                                                        </ul>
+                                                    @endif
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                    @endif
+                                </li>
+                            @endforeach
+                        </ul>
                     </div>
                 </div>
             </div>
