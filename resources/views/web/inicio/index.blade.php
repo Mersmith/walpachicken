@@ -2,12 +2,7 @@
     @section('tituloPagina', 'Navbar dinámico con subniveles')
     @section('descripcion', 'Descripción de la página')
 
-    <div>
-        <!-- Contenido de la página -->
-        <div class="content">
-            <h1>Bienvenido a Nuestro Sitio Web</h1>
-            <br><br><br><br><br><br><br><br><br>
-            <p>Aquí va el contenido de la página principal...</p>
-        </div>
+    <div class="g_contenedor_pagina">
+        @include('web.partials.slider-principal', ['p_elemento' => $data_slider_principal_1])
     </div>
 </x-web-layout>

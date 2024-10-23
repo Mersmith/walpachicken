@@ -26,3 +26,5 @@ php artisan make:model Provincia -mfsc
 php artisan make:model Distrito -mfsc
 
 php artisan make:model Sede -mfsc
+
+php artisan make:model Slider -mfsc

@@ -19,7 +19,7 @@
     @include('layouts.web.assets.css')
 </head>
 
-<body>
+<body class="contenedor_layout_web">
     <!--MENU PRINCIPAL-->
     @include('layouts.web.menu.menu', [
         'menu_izquierda_sede' => $menu_izquierda_sede,
@@ -27,7 +27,7 @@
     ])
 
     <!--CONTENEDOR LAYOUT GENERAL-->
-    <main>
+    <main class="contenedor_layout_web_pagina">
         @yield('content')
         @if (isset($slot))
             {{ $slot }}
