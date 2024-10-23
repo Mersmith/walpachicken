@@ -1,12 +1,25 @@
 .partials_contenedor_celebracion {
     width: 100%;
+    background-color: red;
+    padding: 20px;
 }
 
-.swiper-slide {
+.partials_contenedor_celebracion .titulo {
+    text-align: center;
+}
+
+.partials_contenedor_celebracion .swiper-slide {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    flex-direction: column;
     background-color: #f1f1f1;
     padding: 20px;
     border-radius: 8px;
+}
+
+.partials_contenedor_celebracion .cabecera {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
 }
