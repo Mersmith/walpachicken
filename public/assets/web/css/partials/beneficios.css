@@ -1,11 +1,22 @@
 .partials_contenedor_celebracion {
     width: 100%;
     background-color: red;
-    padding: 20px;
+    padding: 20px 40px;
 }
 
-.partials_contenedor_celebracion .titulo {
-    text-align: center;
+.partials_contenedor_celebracion .swiper-container-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.partials_contenedor_celebracion .swiper {
+    width: 100%;
+    overflow: hidden;
+}
+
+.partials_contenedor_celebracion .swiper-wrapper {
+    display: flex;
 }
 
 .partials_contenedor_celebracion .swiper-slide {
@@ -13,13 +24,64 @@
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
-    background-color: #f1f1f1;
+    background-color: white;
     padding: 20px;
     border-radius: 8px;
+    min-height: 300px; /* Ajusta el alto mínimo según sea necesario */
+    height: 100%;
+    flex-grow: 1; /* Asegura que cada slide crezca uniformemente */
 }
 
 .partials_contenedor_celebracion .cabecera {
     display: flex;
     align-items: center;
     margin-bottom: 15px;
+}
+
+/* CONTROLES */
+.partials_contenedor_celebracion .swiper-button-next,
+.partials_contenedor_celebracion .swiper-button-prev {
+    font-size: 10px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: blue;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    z-index: 10;
+}
+
+.partials_contenedor_celebracion .swiper-button-next:after,
+.partials_contenedor_celebracion .swiper-button-prev:after {
+    font-size: 10px;
+}
+
+.partials_contenedor_celebracion .swiper-button-prev {
+    left: -30px;
+}
+
+.partials_contenedor_celebracion .swiper-button-next {
+    right: -30px;
+}
+
+/* SLIDER THUMBNAILS */
+.partials_contenedor_celebracion .swiper-pagination {
+    position: initial;
+}
+
+.partials_contenedor_celebracion .swiper-pagination-bullet {
+    background-color: blue;
+    width: 8px;
+    height: 8px;
+    opacity: 1;
+    border-radius: 50%;
+}
+
+.partials_contenedor_celebracion .swiper-pagination-bullet-active {
+    background-color: blue;
 }
