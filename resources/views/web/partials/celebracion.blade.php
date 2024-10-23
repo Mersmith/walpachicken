@@ -1,3 +1,3 @@
-<div class="g_centrar_contenedor">
-    <p>CELEBRACION</p>
-</div>
+    <div>
+        <h2>CELEBRACION</h2>
+    </div>
