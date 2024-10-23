@@ -32,17 +32,17 @@
 /* CCONTROLES */
 .partials_contenedor_slider_principal .swiper-button-next,
 .partials_contenedor_slider_principal .swiper-button-prev {
-    background: transparent;
+    background: var(--color-fondo-primario);
     border-radius: 50%;
     width: 40px;
     height: 40px;
-    color: var(--color-texto-senario);
+    color: var(--color-texto-cuaternario);
 }
 
 .partials_contenedor_slider_principal .swiper-button-next:hover,
 .partials_contenedor_slider_principal .swiper-button-prev:hover {
-    background: var(--color-fondo-senario);
-    color: var(--color-texto-septenario);
+    background: var(--color-fondo-terciario);
+    color: var(--color-texto-primario);
 }
 
 .partials_contenedor_slider_principal .swiper-button-next:after,
@@ -60,7 +60,7 @@
     box-shadow: var(--sombra-secundario-derecha)
 }
 
-/* SLIDER THUMBNAILS */
+/* SLIDER PAGINACION */
 .partials_contenedor_slider_principal .swiper-pagination {
     position: initial;
 }
@@ -74,7 +74,7 @@
 }
 
 .partials_contenedor_slider_principal .swiper-pagination-bullet-active {
-    background-color: var(--color-fondo-septenario);
+    background-color: var(--color-fondo-primario);
 }
 
 @media (max-width: 700px) {
