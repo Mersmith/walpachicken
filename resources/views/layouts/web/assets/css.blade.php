@@ -8,6 +8,7 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 <!--LAYOUT MENU-->
+<link rel="stylesheet" href="{{ asset('assets/web/css/variables.css') }}">
 <link rel="stylesheet" href="{{ asset('assets/web/css/layout.css') }}">
 <link rel="stylesheet" href="{{ asset('assets/web/css/menu/menu-cabecera.css') }}">
 

@@ -1,5 +1,5 @@
 <!-- NAVBAR -->
-<div class="navbar" x-data="{ menuAbierto: false }">
+<div class="web_menu_principal" x-data="{ menuAbierto: false }">
     <!-- LOGO -->
     <div class="logo">
         <!-- HAMBURGUESA -->

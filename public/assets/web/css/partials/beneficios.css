@@ -4,6 +4,23 @@
     padding: 20px 40px;
 }
 
+/* TITULO */
+.partials_contenedor_celebracion .titulo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.partials_contenedor_celebracion .titulo h2 {
+    font-size: 35px;
+    font-weight: 700;
+}
+
+.partials_contenedor_celebracion .titulo p {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* SLIDER */
 .partials_contenedor_celebracion .swiper-container-wrapper {
     position: relative;
     display: flex;
@@ -19,6 +36,7 @@
     display: flex;
 }
 
+/* CARD */
 .partials_contenedor_celebracion .swiper-slide {
     display: flex;
     justify-content: center;
@@ -27,15 +45,39 @@
     background-color: white;
     padding: 20px;
     border-radius: 8px;
-    min-height: 300px; /* Ajusta el alto mínimo según sea necesario */
+    min-height: 270px;
     height: 100%;
-    flex-grow: 1; /* Asegura que cada slide crezca uniformemente */
+    flex-grow: 1;
 }
 
 .partials_contenedor_celebracion .cabecera {
     display: flex;
     align-items: center;
     margin-bottom: 15px;
+    gap: 10px;
+}
+
+.partials_contenedor_celebracion .cabecera h3 {
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.partials_contenedor_celebracion .cabecera p {
+    font-size: 15px;
+}
+
+.partials_contenedor_celebracion .cabecera .contenedor_icono {
+    background-color: red;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.partials_contenedor_celebracion .cabecera .contenedor_icono i {
+    color: white;
 }
 
 /* CONTROLES */
@@ -69,9 +111,13 @@
     right: -30px;
 }
 
-/* SLIDER THUMBNAILS */
+/* SLIDER PAGINACION */
 .partials_contenedor_celebracion .swiper-pagination {
     position: initial;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
 }
 
 .partials_contenedor_celebracion .swiper-pagination-bullet {
@@ -83,5 +129,8 @@
 }
 
 .partials_contenedor_celebracion .swiper-pagination-bullet-active {
-    background-color: blue;
+    background-color: rgb(0, 255, 85);
+    width: 15px;
+    height: 15px;
+
 }

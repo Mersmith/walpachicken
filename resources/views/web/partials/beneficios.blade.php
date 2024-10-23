@@ -1,11 +1,11 @@
 @if (!empty($p_elemento) && !empty($p_elemento->contenido))
     <div class="partials_contenedor_celebracion">
         <div class="titulo">
-            <h2>Beneficios de trabajo</h2>
+            <h2>BENEFICIOS DE TRABAJO</h2>
             <p>Descubre los beneficios por ser parte de nuestra familia.</p>
         </div>
 
-        <!-- Contenedor principal del carrusel y los botones -->
+        <!-- SLIDER -->
         <div class="swiper-container-wrapper">
             <div class="swiper SwiperBeneficios-{{ $p_elemento->id }}">
                 <!-- SLIDER -->
@@ -13,17 +13,21 @@
                     @foreach ($p_elemento->contenido as $elemento)
                         <div class="swiper-slide">
                             <div class="cabecera">
-                                {!! $elemento['icono'] !!}
-                                <p>{{ $elemento['titulo'] }}</p>
+                                <div class="contenedor_icono">
+                                    {!! $elemento['icono'] !!}
+                                </div>
+                                <h3>{{ $elemento['titulo'] }}</h3>
                             </div>
                             <p>{{ $elemento['descripcion'] }}</p>
                         </div>
                     @endforeach
                 </div>
+
+                <!-- CONTROL PAGINACION -->
                 <div class="swiper-pagination"></div>
             </div>
 
-            <!-- Botones fuera del contenedor de Swiper -->
+            <!-- CONTROL BOTONES -->
             <div class="swiper-button-prev"></div>
             <div class="swiper-button-next"></div>
         </div>
@@ -49,7 +53,7 @@
                 },
                 500: {
                     slidesPerView: 1,
-                    spaceBetween: 0,
+                    spaceBetween: 10,
                 }
             }
         });
