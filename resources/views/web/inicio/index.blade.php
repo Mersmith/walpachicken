@@ -41,17 +41,29 @@
                                         <ul class="menu_nivel_2 submenu">
                                             @foreach ($nivel1['submenu'] as $nivel2)
                                                 <li>
-                                                    <a href="#">{{ $nivel2['nombre'] }}</a>
+                                                    <a href="#">{{ $nivel2['nombre'] }}
+                                                        @if (!empty($nivel2['submenu']))
+                                                            <span><i class="fa-solid fa-angle-right"></i></span> 
+                                                        @endif
+                                                    </a>
                                                     @if (!empty($nivel2['submenu']))
                                                         <ul class="menu_nivel_3 submenu">
                                                             @foreach ($nivel2['submenu'] as $nivel3)
                                                                 <li>
-                                                                    <a href="#">{{ $nivel3['nombre'] }}</a>
+                                                                    <a href="#">{{ $nivel3['nombre'] }}
+                                                                         @if (!empty($nivel3['submenu']))
+                                                                            <span><i class="fa-solid fa-angle-right"></i></span> 
+                                                                        @endif
+                                                                    </a>
                                                                     @if (!empty($nivel3['submenu']))
                                                                         <ul class="menu_nivel_4 submenu">
                                                                             @foreach ($nivel3['submenu'] as $nivel4)
                                                                                 <li>
-                                                                                    <a href="#">{{ $nivel4['nombre'] }}</a>
+                                                                                    <a href="#">{{ $nivel4['nombre'] }}
+                                                                                        @if (!empty($nivel4['submenu']))
+                                                                                            <span><i class="fa-solid fa-angle-right"></i></span>     
+                                                                                        @endif
+                                                                                    </a>
                                                                                     @if (!empty($nivel4['submenu']))
                                                                                         <ul class="menu_nivel_5 submenu">
                                                                                             @foreach ($nivel4['submenu'] as $nivel5)

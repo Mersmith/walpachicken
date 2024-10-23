@@ -130,9 +130,49 @@ class WebInicioController extends Controller
         return $estructuraAnidada;
     }
 
+    public function getWebSedesPorRegionDistrito()
+    {
+        // Traemos las regiones que tienen distritos con sedes, sin incluir las provincias.
+        $regiones = Region::whereHas('provincias.distritos.sedes') // Filtrar para traer solo donde haya sedes
+            ->with([
+                'provincias.distritos' => function ($query) {
+                    $query->whereHas('sedes') // Filtrar distritos donde haya sedes
+                        ->with('sedes'); // Traer las sedes de los distritos
+                }
+            ])
+            ->get();
+
+        // Estructuramos los datos en el formato solicitado (región -> distrito -> sede)
+        $estructuraAnidada = $regiones->map(function ($region) {
+            return [
+                'submenu' => [
+                    'id' => $region->id,
+                    'nombre' => $region->nombre,
+                    'submenu' => $region->provincias->flatMap(function ($provincia) {
+                        return $provincia->distritos->map(function ($distrito) {
+                            return [
+                                'id' => $distrito->id,
+                                'nombre' => $distrito->nombre,
+                                'submenu' => $distrito->sedes->map(function ($sede) {
+                                    return [
+                                        'id' => $sede->id,
+                                        'nombre' => $sede->nombre
+                                    ];
+                                })
+                            ];
+                        });
+                    })
+                ]
+            ];
+        });
+
+        return $estructuraAnidada;
+    }
+
+
     public function agregarSedesAMenu($menu)
     {
-        $sedes = $this->getWebSedesPorRegionProvinciaDistrito();
+        $sedes = $this->getWebSedesPorRegionDistrito();
 
         foreach ($sedes as $item) {
             $menu[0]['submenu'][] = $item['submenu']; // 1er nivel
@@ -144,7 +184,7 @@ class WebInicioController extends Controller
 
     public function agregarSedesAMenuUbicacion($menu)
     {
-        $sedes = $this->getWebSedesPorRegionProvinciaDistrito();
+        $sedes = $this->getWebSedesPorRegionDistrito();
 
         foreach ($sedes as $item) {
             $menu[0]['submenu'][] = $item['submenu']; // 1er nivel
