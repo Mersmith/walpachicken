@@ -21,7 +21,10 @@
 
 <body>
     <!--MENU PRINCIPAL-->
-    @include('layouts.web.menu.menu')
+    @include('layouts.web.menu.menu', [
+        'menu_izquierda_sede' => $menu_izquierda_sede,
+        'menu_derecha_sede' => $menu_derecha_sede,
+    ])
 
     <!--CONTENEDOR LAYOUT GENERAL-->
     <main>

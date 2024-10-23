@@ -4,26 +4,55 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 use Illuminate\View\View;
+use App\Http\Controllers\Web\WebLayoutController;
 
 class WebLayout extends Component
 {
-    public $footer;
-    public $categorias;
+    public $menu_izquierda_sede;
+    public $menu_derecha_sede;
 
     /**
      * Create a new component instance.
      */
     public function __construct()
     {
+        $menu_izquierda = [
+            [
+                'id' => 1,
+                'nombre' => 'NUESTRA CARTA',
+                'submenu' => []
+            ],
+            [
+                'id' => 22,
+                'nombre' => 'PROMOCIONES',
+                'submenu' => []
+            ],
+            [
+                'id' => 43,
+                'nombre' => 'CATERING',
+                'submenu' => []
+            ]
+        ];
+
+        $menu_derecha = [
+            [
+                'id' => 1,
+                'nombre' => 'MI UBICACIÓN',
+                'submenu' => []
+            ]
+        ];
+
+        $layoutController = new WebLayoutController();
+        $this->menu_izquierda_sede = $layoutController->agregarSedesAMenu($menu_izquierda);
+        $this->menu_derecha_sede = $layoutController->agregarSedesAMenuUbicacion($menu_derecha);
+    }   
+
+    public function render(): View
+    {
+        return view('layouts.web.layout-web', [
+            'menu_izquierda_sede' => $this->menu_izquierda_sede,
+            'menu_derecha_sede' => $this->menu_derecha_sede,
+        ]);
     }
 
-    /**
-     * Get the view / contents that represents the component.
-     */
-
-     public function render(): View
-     {
-         return view('layouts.web.layout-web');
-     }
- 
 }
