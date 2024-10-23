@@ -79,10 +79,10 @@
     text-decoration: none;
 }
 
-.menu .menu_nivel_2,
-.menu .menu_nivel_3,
-.menu .menu_nivel_4,
-.menu .menu_nivel_5 {
+.menu_izquierda .menu_nivel_2,
+.menu_izquierda .menu_nivel_3,
+.menu_izquierda .menu_nivel_4,
+.menu_izquierda .menu_nivel_5 {
     display: none;
     position: absolute;
     background-color: #333;
@@ -92,15 +92,36 @@
     z-index: 999;
 }
 
-.menu ul li:hover>ul {
-    display: block;
-}
-
-.menu .menu_nivel_3,
-.menu .menu_nivel_4,
-.menu .menu_nivel_5 {
+.menu_izquierda .menu_nivel_3,
+.menu_izquierda .menu_nivel_4,
+.menu_izquierda .menu_nivel_5 {
     left: 100%;
     top: 0;
+}
+
+.menu_derecha .menu_nivel_2,
+.menu_derecha .menu_nivel_3,
+.menu_derecha .menu_nivel_4,
+.menu_derecha .menu_nivel_5 {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    top: 100%;
+    right: 0;
+    min-width: 180px;
+    z-index: 999;
+}
+
+.menu_derecha .menu_nivel_3,
+.menu_derecha .menu_nivel_4,
+.menu_derecha .menu_nivel_5 {
+    right: 100%;
+    top: 0;
+}
+
+.menu_izquierda ul li:hover>ul,
+.menu_derecha ul li:hover>ul {
+    display: block;
 }
 
 .menu_izquierda {
@@ -181,6 +202,7 @@
         position: relative;
         top: 0;
         left: 0;
+        right: 0;
         min-width: 100%;
     }
 
@@ -188,6 +210,7 @@
     .menu .menu_nivel_4,
     .menu .menu_nivel_5 {
         left: 0;
+        right: 0;
         top: 0;
         min-width: 100%;
     }
