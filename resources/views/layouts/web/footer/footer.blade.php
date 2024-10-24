@@ -3,6 +3,11 @@
         <div class="contenedor_informacion" x-data="dataEcommerceFooter()">
             <div class="logo">
                 <img src="{{ asset('assets/images/logo.png') }}" alt="Tendencias Market" class="imagen_logo_computadora" />
+                <div class="redes_sociales">
+                    <a class="boton_seguir"><i class="fa-brands fa-facebook"></i> </a>
+                    <a class="boton_seguir"><i class="fa-brands fa-instagram"></i> </a>
+                    <a class="boton_seguir"><i class="fa-brands fa-tiktok"></i> </a>
+                </div>
             </div>
 
             <div class="enlaces">
@@ -79,7 +84,6 @@
             return {
                 itemIndex: null,
                 toggleAccordion(index) {
-                    // Si el índice actual está abierto, ciérralo, de lo contrario, abre el nuevo.
                     if (this.itemIndex === index) {
                         this.itemIndex = null;
                     } else {

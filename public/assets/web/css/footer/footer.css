@@ -1,13 +1,13 @@
 .footer {
     width: 100%;
-    background-color: #0c2941;
+    background-color: var(--color-fondo-primario);
     padding-top: 10px;
     padding-bottom: 10px;
-    color: white;
+    color: var(--color-texto-cuaternario);
     text-align: center;
 }
 
-.contenedor_informacion {
+.footer .contenedor_informacion {
     display: grid;
     grid-template-columns: 1fr 3fr;
     align-items: center;
@@ -16,102 +16,103 @@
 }
 
 /* Logo */
-.logo {
+.footer .logo {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
-.logo img {
-    max-width: 150px;
+.footer .logo img {
+    max-width: 100px;
     height: auto;
 }
 
-/* Enlaces (4 columns grid) */
-.enlaces {
+.footer .logo .redes_sociales {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 25px;
+}
+
+
+.footer .enlaces {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
 }
 
-.columna h3 {
-    font-size: 1.2em;
+.footer .columna h3 {
+    font-size: 20px;
     margin-bottom: 10px;
+    font-weight: 600;
 }
 
-.columna ul {
+.footer .columna ul {
     list-style: none;
     padding: 0;
     margin: 0;
+    line-height: 20px;
 }
 
-.columna ul li {
+.footer .columna ul li {
     margin-bottom: 5px;
+    font-size: 14px;
 }
 
-.columna ul li a {
-    color: white;
+.footer .columna ul li a {
     text-decoration: none;
 }
 
-.columna ul li a:hover {
+.footer .columna ul li a:hover {
     text-decoration: underline;
 }
 
 /* Derechos */
-.contenedor_derechos {
-    background-color: #082035;
+.footer .contenedor_derechos {
     padding: 10px;
-    font-size: 0.9em;
+    font-size: 14px;
 }
 
-.contenedor_control {
+.footer .contenedor_control {
     display: none;
 }
 
-
-/* Responsivo para tablets (2 columnas) */
 @media (max-width: 768px) {
-    .contenedor_informacion {
-        grid-template-columns: 1fr 1fr;
+    .footer .contenedor_informacion {
+        grid-template-columns: 1fr;
     }
 
-    .enlaces {
-        grid-template-columns: repeat(2, 1fr);
+    .footer .enlaces {
+        grid-template-columns: 1fr;
     }
 
-    .contenedor_acordeon {
+    .footer .logo {
+        margin-bottom: 20px;
+    }
+
+    .footer .contenedor_acordeon {
         display: none;
     }
 
-    .contenedor_acordeon.mostrar {
+    .footer .contenedor_acordeon.mostrar {
         display: block;
     }
 
-    .contenedor_titulo {
+    .footer .contenedor_titulo {
         cursor: pointer;
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
 
-    .contenedor_control {
+    .footer .contenedor_control {
         display: block;
-        font-size: 1.5rem;
-    }
-}
-
-/* Responsivo para móviles (1 columna) */
-@media (max-width: 480px) {
-    .contenedor_informacion {
-        grid-template-columns: 1fr;
+        font-size: 18px;
     }
 
-    .enlaces {
-        grid-template-columns: 1fr;
-    }
-
-    .logo {
-        margin-bottom: 20px;
+    .footer .columna h3 {
+        font-size: 16px;
     }
 }
