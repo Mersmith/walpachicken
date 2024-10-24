@@ -1,3 +1,7 @@
+.partials_contenedor_planes {
+    background-color: var(--color-fondo-secundario);
+}
+
 .botones_planes {
     display: flex;
     justify-content: center;
@@ -24,7 +28,14 @@
 .plan_contenido_activo {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 20px;    
+    padding: 40px 20px;
+
+}
+
+.reserva{
+    background-color: var(--color-fondo-cuaternario);
+
 }
 
 @media (max-width: 1000px) {
