@@ -22,5 +22,13 @@
 }
 
 .plan_contenido_activo {
-    display: block;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+@media (max-width: 1000px) {
+    .plan_contenido_activo {
+        grid-template-columns: 1fr;
+    }
 }

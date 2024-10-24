@@ -2,11 +2,8 @@
     <!-- Botones de planes -->
     <div class="botones_planes">
         @foreach ($p_elementos as $index => $plan)
-            <button 
-                :class="{ 'active': activePlan === {{ $index }} }"
-                @click="activePlan = {{ $index }}"
-                class="boton_plan"
-            >
+            <button :class="{ 'active': activePlan === {{ $index }} }" @click="activePlan = {{ $index }}"
+                class="boton_plan">
                 {!! $plan->icono !!} {{ $plan->titulo }}
             </button>
         @endforeach
@@ -14,10 +11,7 @@
 
     <!-- Contenido de planes -->
     @foreach ($p_elementos as $index => $plan)
-        <div 
-            :class="activePlan === {{ $index }} ? 'plan_contenido plan_contenido_activo' : 'plan_contenido'" 
-            class="plan_contenido"
-        >
+        <div :class="activePlan === {{ $index }} ? 'plan_contenido_activo' : 'plan_contenido'">
             @if (isset($plan->reservas) && is_array($plan->reservas))
                 @foreach ($plan->reservas as $reserva)
                     <div class="reserva">
@@ -31,7 +25,6 @@
                             @endforeach
                         </ul>
                     </div>
-                    <br>
                 @endforeach
             @endif
         </div>
