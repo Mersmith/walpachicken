@@ -12,17 +12,17 @@
     margin-bottom: 40px;
 }
 
-.grid_social {
+.partials_contenedor_social .grid_social {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     margin: 20px 0px;
 }
 
-.card_social {
+.partials_contenedor_social .card_social {
     padding: 20px;
-    background-color: #f1f1f1;
-    border-radius: 10px;
+    background-color: var(--color-fondo-cuaternario);
+    border-radius: 6px;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -30,19 +30,19 @@
 }
 
 /* TITULO SOCIAL */
-.titulo_social {
+.partials_contenedor_social .titulo_social {
     display: flex;
     width: 100%;
     gap: 10px;
 }
 
-.titulo_social img {
+.partials_contenedor_social .titulo_social img {
     width: 60px;
     height: 60px;
     border-radius: 50%;
 }
 
-.titulo_social .info {
+.partials_contenedor_social .titulo_social .info {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -50,14 +50,14 @@
     justify-content: center;
 }
 
-.titulo_social .info h4 {
+.partials_contenedor_social .titulo_social .info h4 {
     font-weight: 700;
     font-size: 16px;
     line-height: 18px;
     letter-spacing: .4px;
 }
 
-.titulo_social .info h5 {
+.partials_contenedor_social .titulo_social .info h5 {
     font-weight: 400;
     font-size: 14px;
     line-height: 14px;
@@ -65,7 +65,7 @@
     color: #ada9a8;
 }
 
-.titulo_social .info p {
+.partials_contenedor_social .titulo_social .info p {
     color: #0a0a0a;
     font-style: normal;
     font-weight: 400;
@@ -73,11 +73,11 @@
     line-height: 14px;
 }
 
-
-.video {
+/* VIDEO */
+.partials_contenedor_social .video {
     width: 100%;
     height: 400px;
-    background-color: #ddd;
+    background-color:  var(--color-fondo-quinario);
     margin: 10px 0px;
     display: flex;
     justify-content: center;
@@ -85,22 +85,19 @@
     font-size: 18px;
 }
 
-/* Clase para redondear bordes del video */
-.rounded_video {
+.partials_contenedor_social .rounded_video {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* Asegura que el video mantenga proporciones sin distorsión */
-    border-radius: 10px;
-    /* Bordes redondeados */
+    border-radius: 6px;
 }
 
-.boton_seguir {
+/* BOTON */
+.partials_contenedor_social .boton_seguir {
     width: 148px;
     height: 32px;
     margin-top: 4px;
-    background: #4192ef;
-    color: #fafafa;
+    color: var(--color-texto-cuaternario);
     border-radius: 6px;
     cursor: pointer;
     font-weight: 700;
@@ -113,8 +110,22 @@
     gap: 5px;
 }
 
+.partials_contenedor_social .social_tiktok .boton_seguir {
+    background-color: #000000;
+}
+
+.partials_contenedor_social .social_instagram .boton_seguir {
+    background-color: #cb0088;
+}
+
+.partials_contenedor_social .social_facebook .boton_seguir {
+    background-color: #1778f2;
+}
+
 @media (max-width: 700px) {
-    .grid_social {
+
+    .partials_contenedor_social .grid_social {
         grid-template-columns: 1fr;
     }
+
 }
