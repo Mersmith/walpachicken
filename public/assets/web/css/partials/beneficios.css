@@ -1,13 +1,14 @@
 .partials_contenedor_celebracion {
     width: 100%;
-    background-color: red;
-    padding: 20px 40px;
+    background-color: var(--color-fondo-terciario);
+    padding: 20px 45px;
 }
 
 /* TITULO */
 .partials_contenedor_celebracion .titulo {
     text-align: center;
     margin-bottom: 20px;
+    color: var(--color-texto-primario);
 }
 
 .partials_contenedor_celebracion .titulo h2 {
@@ -42,7 +43,7 @@
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
-    background-color: white;
+    background-color: var(--color-fondo-cuaternario);
     padding: 20px;
     border-radius: 8px;
     min-height: 270px;
@@ -67,7 +68,7 @@
 }
 
 .partials_contenedor_celebracion .cabecera .contenedor_icono {
-    background-color: red;
+    background-color: var(--color-fondo-secundario);
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -77,7 +78,7 @@
 }
 
 .partials_contenedor_celebracion .cabecera .contenedor_icono i {
-    color: white;
+    color: var(--color-texto-cuaternario);
 }
 
 /* CONTROLES */
@@ -87,14 +88,14 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: blue;
+    background-color: var(--color-fondo-primario);
     border-radius: 50%;
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: var(--color-texto-cuaternario);
     z-index: 10;
 }
 
@@ -104,11 +105,11 @@
 }
 
 .partials_contenedor_celebracion .swiper-button-prev {
-    left: -30px;
+    left: -35px;
 }
 
 .partials_contenedor_celebracion .swiper-button-next {
-    right: -30px;
+    right: -35px;
 }
 
 /* SLIDER PAGINACION */
@@ -121,7 +122,7 @@
 }
 
 .partials_contenedor_celebracion .swiper-pagination-bullet {
-    background-color: blue;
+    background-color: var(--color-fondo-senario);
     width: 8px;
     height: 8px;
     opacity: 1;
@@ -129,8 +130,7 @@
 }
 
 .partials_contenedor_celebracion .swiper-pagination-bullet-active {
-    background-color: rgb(0, 255, 85);
+    background-color: var(--color-fondo-primario);
     width: 15px;
     height: 15px;
-
 }
