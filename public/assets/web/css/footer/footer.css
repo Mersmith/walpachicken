@@ -65,6 +65,11 @@
     font-size: 0.9em;
 }
 
+.contenedor_control {
+    display: none;
+}
+
+
 /* Responsivo para tablets (2 columnas) */
 @media (max-width: 768px) {
     .contenedor_informacion {
@@ -73,6 +78,26 @@
 
     .enlaces {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contenedor_acordeon {
+        display: none;
+    }
+
+    .contenedor_acordeon.mostrar {
+        display: block;
+    }
+
+    .contenedor_titulo {
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .contenedor_control {
+        display: block;
+        font-size: 1.5rem;
     }
 }
 
