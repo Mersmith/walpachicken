@@ -34,7 +34,9 @@
         @endif
     </main>
 
-    @include('layouts.web.footer.footer')
+    @include('layouts.web.footer.footer', [
+        'p_elementos' => $footer,
+    ])
 
     <!--SCRIPTS-->
     @include('layouts.web.assets.js')

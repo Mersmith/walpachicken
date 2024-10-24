@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Web;
 use App\Http\Controllers\Controller;
 use App\Models\Provincia;
 use App\Models\Region;
+use App\Models\WebFooter;
 
 class WebLayoutController extends Controller
 {
@@ -151,6 +152,24 @@ class WebLayoutController extends Controller
         }
 
         return $menu;
+    }
+
+    public function getWebFooter($id)
+    {
+        $footer = WebFooter::where('id', $id)
+            ->where('activo', true)
+            ->first();
+
+        if ($footer) {
+            $footer->primera_columna = json_decode($footer->primera_columna, true);
+            $footer->segunda_columna = json_decode($footer->segunda_columna, true);
+            $footer->tercera_columna = json_decode($footer->tercera_columna, true);
+            $footer->cuarta_columna = json_decode($footer->cuarta_columna, true);
+        } else {
+            $footer = null;
+        }
+
+        return $footer;
     }
 
 }

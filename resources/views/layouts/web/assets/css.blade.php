@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="{{ asset('assets/web/css/variables.css') }}">
 <link rel="stylesheet" href="{{ asset('assets/web/css/layout.css') }}">
 <link rel="stylesheet" href="{{ asset('assets/web/css/menu/menu-cabecera.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/web/css/footer/footer.css') }}">
 
 <!--PARTIALS-->
 <link rel="stylesheet" href="{{ asset('assets/web/css/partials/slider-principal.css') }}">

@@ -26,5 +26,6 @@ class DatabaseSeeder extends Seeder
         $this->call(SedeSeeder::class);
         $this->call(SliderSeeder::class);
         $this->call(BeneficiosTrabajoSeeder::class);
+        $this->call(WebFooterSeeder::class);
     }
 }
