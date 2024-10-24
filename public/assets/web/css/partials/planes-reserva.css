@@ -1,0 +1,5 @@
+.partials_contenedor_planes {
+    width: 100%;
+    background-color: var(--color-fondo-cuaternario);
+    padding: 60px 40px;
+}

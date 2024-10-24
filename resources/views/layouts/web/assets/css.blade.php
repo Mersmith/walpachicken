@@ -17,3 +17,4 @@
 <link rel="stylesheet" href="{{ asset('assets/web/css/partials/slider-principal.css') }}">
 <link rel="stylesheet" href="{{ asset('assets/web/css/partials/social.css') }}">
 <link rel="stylesheet" href="{{ asset('assets/web/css/partials/beneficios.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/web/css/partials/planes-reserva.css') }}">

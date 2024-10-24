@@ -12,36 +12,11 @@
                 'p_elemento' => $data_beneficios_trabajo_1,
             ])
 
-            @include('web.partials.celebracion')
+            @include('web.partials.planes-reserva', [
+                'p_elementos' => $data_planes_reserva,
+            ])
         </div>
 
 
-        <!-- Iterar sobre los planes de reserva -->
-        <div class="planes-reserva">
-            @foreach ($data_planes_reserva as $plan)
-                <div class="plan">
-                    <h3>{!! $plan->icono !!} {{ $plan->titulo }}</h3>
-
-                    <!-- Decodificar y mostrar reservas si existen -->
-                    @if (isset($plan->reservas) && is_array($plan->reservas))
-                        @foreach ($plan->reservas as $reserva)
-                            <div class="reserva">
-                                <h4>{{ $reserva['titulo'] }}</h4>
-                                <ul>
-                                    @foreach ($reserva['lista'] as $item)
-                                        <li>
-                                            {!! $item['icono'] !!} {{ $item['subtitulo'] }}
-                                            <p>{{ $item['descripcion'] }}</p>
-                                        </li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                            <br>
-                        @endforeach
-                    @endif
-                </div>
-                <br>
-            @endforeach
-        </div>
     </div>
 </x-web-layout>
