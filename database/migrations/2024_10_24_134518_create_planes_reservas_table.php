@@ -14,8 +14,9 @@ return new class extends Migration
         Schema::create('planes_reservas', function (Blueprint $table) {
             $table->id();
 
+            $table->string('icono');
             $table->string('titulo');
-            $table->json('items');
+            $table->json('reservas');
             $table->boolean('activo')->default(false)->comment('1 ACTIVADO, 0 DESACTIVADO');
 
             $table->timestamps();

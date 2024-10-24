@@ -10,6 +10,6 @@ class PlanesReserva extends Model
     /** @use HasFactory<\Database\Factories\PlanesReservaFactory> */
     use HasFactory;
 
-    protected $fillable = ['titulo', 'items', 'activo'];
+    protected $fillable = ['icono', 'titulo', 'reservas', 'activo'];
 
 }
