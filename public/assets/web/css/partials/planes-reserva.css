@@ -1,5 +1,26 @@
-.partials_contenedor_planes {
-    width: 100%;
-    background-color: var(--color-fondo-cuaternario);
-    padding: 60px 40px;
+.botones_planes {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.boton_plan {
+    background-color: var(--color-boton-secundario);
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.boton_plan.active {
+    background-color: var(--color-boton-primario);
+}
+
+.plan_contenido {
+    display: none;
+}
+
+.plan_contenido_activo {
+    display: block;
 }
