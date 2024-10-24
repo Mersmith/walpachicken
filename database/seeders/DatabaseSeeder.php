@@ -27,5 +27,6 @@ class DatabaseSeeder extends Seeder
         $this->call(SliderSeeder::class);
         $this->call(BeneficiosTrabajoSeeder::class);
         $this->call(WebFooterSeeder::class);
+        $this->call(PlanesReservaSeeder::class);
     }
 }
